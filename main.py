@@ -1,3 +1,6 @@
+import os
+
+
 from image import *
 from input import value_input
 from hist import *
