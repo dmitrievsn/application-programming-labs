@@ -41,13 +41,15 @@ def image_output(image: ndarray,gr_image: ndarray)->None:
     :param gr_image: массив с серыми пикселями(полутоновое изображение)
     :return: None
     """
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    gr_image_rgb=cv2.cvtColor(gr_image, cv2.COLOR_BGR2RGB)
     plt.figure(figsize=(10, 5))
     plt.subplot(1, 2, 1)
-    plt.imshow(image)
+    plt.imshow(image_rgb)
     plt.title('Исходное изображение')
     plt.axis('off')
     plt.subplot(1, 2, 2)
-    plt.imshow(gr_image)
+    plt.imshow(gr_image_rgb)
     plt.title('Обработанное изображение')
     plt.axis('off')
     plt.tight_layout()
